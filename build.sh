@@ -31,6 +31,7 @@ main() {
   export PATH="${HOME}/.local/go/bin:${PATH}"
 
   # Install Hugo
+  echo "Hugo version: $(hugo version)"
   echo "Installing Hugo ${HUGO_VERSION}..."
   curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
   mkdir "${HOME}/.local/hugo"
