@@ -1,4 +1,4 @@
-name = "blogtika-cloudflare-worker"
+name = "blogtika"
 compatibility_date = "2025-07-31"
 
 [build]
