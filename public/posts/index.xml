@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Tika Blog - Expenses Management, Procure-to-pay and Payable solution</title>
+    <title>Posts on TikaData - AI-powered bookkeeping and financial operation software</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Tika Blog - Expenses Management, Procure-to-pay and Payable solution</description>
+    <description>Recent content in Posts on TikaData - AI-powered bookkeeping and financial operation software</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Sat, 28 Jun 2025 13:28:06 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AP and Payable Solution</title>
+      <link>http://localhost:1313/posts/bill-payable/</link>
+      <pubDate>Sat, 28 Jun 2025 13:28:06 +0700</pubDate>
+      <guid>http://localhost:1313/posts/bill-payable/</guid>
+      <description>&lt;p&gt;Accounts Payable (AP) management is a critical function that directly impacts cash flow, vendor relationships, and financial accuracy. In today&amp;rsquo;s competitive business environment, organizations need robust payable solutions to streamline processes, reduce costs, and maintain strong supplier partnerships.&lt;/p&gt;&#xA;&lt;h2 id=&#34;understanding-accounts-payable-management&#34;&gt;Understanding Accounts Payable Management&lt;/h2&gt;&#xA;&lt;p&gt;Accounts Payable refers to the money a company owes to its suppliers and vendors for goods and services received but not yet paid for. Effective AP management involves:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Why We Need Expense Management Systems</title>
       <link>http://localhost:1313/posts/why-we-need-expense-mgmt/</link>
       <pubDate>Sat, 28 Jun 2025 13:28:06 +0700</pubDate>
       <guid>http://localhost:1313/posts/why-we-need-expense-mgmt/</guid>
-      <description>&lt;p&gt;In runing business in many industries, we&amp;rsquo;ll have lot of expenses receipt to manage, either create by purchasing teams, accounting, or teams from all department. To ensure there&amp;rsquo;s no fraud and mistakes, we need a mechanism to do it.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In running business across many industries, we&amp;rsquo;ll have lots of expense receipts to manage, either created by purchasing teams, accounting, or teams from all departments. To ensure there&amp;rsquo;s no fraud and mistakes, we need a mechanism to handle this effectively.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge-of-manual-expense-management&#34;&gt;The Challenge of Manual Expense Management&lt;/h2&gt;&#xA;&lt;p&gt;Traditional expense management often relies on paper receipts, spreadsheets, and manual approval processes. This approach creates several significant problems:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Human Error&lt;/strong&gt;: Manual data entry leads to mistakes in categorization, amounts, and dates&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Lost Receipts&lt;/strong&gt;: Physical receipts can be misplaced, damaged, or forgotten&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Time Consumption&lt;/strong&gt;: Employees spend hours organizing and submitting expenses&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Delayed Reimbursements&lt;/strong&gt;: Slow approval processes frustrate employees&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compliance Issues&lt;/strong&gt;: Difficulty maintaining proper audit trails and tax compliance&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;benefits-of-digital-expense-management-systems&#34;&gt;Benefits of Digital Expense Management Systems&lt;/h2&gt;&#xA;&lt;p&gt;Modern expense management systems address these challenges through automation and digitalization:&lt;/p&gt;</description>
     </item>
     <item>
       <title>My First Post</title>
       <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Mon, 15 Jan 2024 10:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;h1 id=&#34;welcome-to-my-first-blog-post&#34;&gt;Welcome to My First Blog Post!&lt;/h1&gt;&#xA;&lt;p&gt;This is a sample blog post to demonstrate that our Hugo site is working correctly.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-fixed&#34;&gt;What We Fixed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;✅ Resolved the layout file errors&lt;/li&gt;&#xA;&lt;li&gt;✅ Created custom layouts compatible with Hugo v0.92.2&lt;/li&gt;&#xA;&lt;li&gt;✅ Removed theme dependency conflicts&lt;/li&gt;&#xA;&lt;li&gt;✅ Added proper content structure&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features-working&#34;&gt;Features Working&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Home page with content&lt;/li&gt;&#xA;&lt;li&gt;Individual post pages&lt;/li&gt;&#xA;&lt;li&gt;Clean, responsive design&lt;/li&gt;&#xA;&lt;li&gt;Fast static site generation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The site is now ready for your content!&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is a sample blog post to demonstrate that our Hugo site is working correctly.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-fixed&#34;&gt;What We Fixed&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;✅ Resolved the layout file errors&lt;/li&gt;&#xA;&lt;li&gt;✅ Created custom layouts compatible with Hugo v0.92.2&lt;/li&gt;&#xA;&lt;li&gt;✅ Removed theme dependency conflicts&lt;/li&gt;&#xA;&lt;li&gt;✅ Added proper content structure&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features-working&#34;&gt;Features Working&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Home page with content&lt;/li&gt;&#xA;&lt;li&gt;Individual post pages&lt;/li&gt;&#xA;&lt;li&gt;Clean, responsive design&lt;/li&gt;&#xA;&lt;li&gt;Fast static site generation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The site is now ready for your content!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

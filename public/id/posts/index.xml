@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Selamat Datang di Tika Blog on TikaData - AI-powered bookkeeping and financial operation software</title>
-    <link>http://localhost:1313/id/</link>
-    <description>Recent content in Selamat Datang di Tika Blog on TikaData - AI-powered bookkeeping and financial operation software</description>
+    <title>Posts on TikaData - AI-powered bookkeeping and financial operation software</title>
+    <link>http://localhost:1313/id/posts/</link>
+    <description>Recent content in Posts on TikaData - AI-powered bookkeeping and financial operation software</description>
     <generator>Hugo</generator>
     <language>id</language>
     <lastBuildDate>Sat, 28 Jun 2025 13:28:06 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/id/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/id/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Solusi AP dan Payable</title>
       <link>http://localhost:1313/id/posts/bill-payable/</link>

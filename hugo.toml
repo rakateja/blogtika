@@ -1,4 +1,18 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://blog.tikadata.com/'
 languageCode = 'en-us'
-title = 'Tika Blog - Expenses Management, Procure-to-pay and Payable solution'
+title = 'TikaData - AI-powered bookkeeping and financial operation software'
 theme = 'ananke'
+
+# Disable theme's header to use our custom header
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[languages]
+  [languages.en]
+    contentDir = 'content/en'
+    languageName = 'English'
+    weight = 1
+
+  [languages.id]
+    contentDir = 'content/id'
+    languageName = 'Bahasa Indonesia'
+    weight = 2

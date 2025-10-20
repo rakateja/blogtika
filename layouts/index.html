@@ -86,7 +86,6 @@
         {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
             <div class="post-item">
                 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                <div class="post-summary">{{ .Summary }}</div>
                 <div class="post-meta">{{ .Date.Format "January 2, 2006" }}</div>
             </div>
         {{ end }}

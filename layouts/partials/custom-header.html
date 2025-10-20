@@ -34,12 +34,36 @@
         
         <div class="header-right">
             <div class="language-switcher">
-                {{ range .Site.Languages }}
-                    {{ if eq .Lang $.Site.Language.Lang }}
-                        <strong>{{ .LanguageName }}</strong>
-                    {{ else }}
-                        <a href="{{ .Lang | relURL }}">{{ .LanguageName }}</a>
+                {{ if .Site.Languages }}
+                    {{ range .Site.Languages }}
+                        {{ if eq .Lang $.Site.Language.Lang }}
+                            <strong>{{ .LanguageName }}</strong>
+                        {{ else }}
+                            {{ $currentPath := $.RelPermalink }}
+                            {{ $targetLang := .Lang }}
+                            {{ $targetURL := "" }}
+                            
+                            {{ if eq $targetLang "en" }}
+                                {{ if hasPrefix $currentPath "/id/" }}
+                                    {{ $targetURL = replace $currentPath "/id/" "/en/" }}
+                                {{ else }}
+                                    {{ $targetURL = printf "/en%s" $currentPath }}
+                                {{ end }}
+                            {{ else if eq $targetLang "id" }}
+                                {{ if hasPrefix $currentPath "/en/" }}
+                                    {{ $targetURL = replace $currentPath "/en/" "/id/" }}
+                                {{ else }}
+                                    {{ $targetURL = printf "/id%s" $currentPath }}
+                                {{ end }}
+                            {{ end }}
+                            
+                            <a href="{{ $targetURL }}">{{ .LanguageName }}</a>
+                        {{ end }}
                     {{ end }}
+                {{ else }}
+                    {{/* Fallback if languages not configured properly */}}
+                    <a href="/en/">English</a>
+                    <a href="/id/">Bahasa Indonesia</a>
                 {{ end }}
             </div>
         </div>
