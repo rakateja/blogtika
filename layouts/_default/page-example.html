@@ -1,0 +1,35 @@
+{{/* Example page template showing how to use the reusable header */}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Custom Header Styles -->
+    <link rel="stylesheet" href="{{ "css/custom-header.css" | relURL }}">
+    
+    <!-- Your page-specific styles here -->
+    <style>
+        .page-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    {{/* Include the reusable header */}}
+    {{ partial "custom-header.html" . }}
+    
+    <main class="page-content">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </main>
+    
+    <!-- Your page-specific scripts here -->
+</body>
+</html>

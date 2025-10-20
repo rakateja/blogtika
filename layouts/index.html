@@ -1,0 +1,95 @@
+{{ define "main" }}
+<style>
+    .main-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    
+    .content-section {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+    
+    h1 { 
+        color: #2c3e50; 
+        margin-bottom: 10px;
+    }
+    
+    h2 { 
+        color: #34495e; 
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .content { 
+        margin: 20px 0; 
+        font-size: 16px;
+    }
+    
+    .post-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-left: 3px solid #3498db;
+        background: #f8f9fa;
+        border-radius: 0 5px 5px 0;
+    }
+    
+    .post-item h3 {
+        margin: 0 0 10px 0;
+    }
+    
+    .post-item h3 a {
+        color: #2c3e50;
+        text-decoration: none;
+    }
+    
+    .post-item h3 a:hover {
+        color: #3498db;
+    }
+    
+    .post-meta {
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .post-summary {
+        margin: 10px 0;
+        color: #555;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .main-container {
+            margin: 20px auto;
+        }
+        
+        .content-section {
+            padding: 20px;
+        }
+    }
+</style>
+
+<div class="main-container">
+    <div class="content-section">
+        <h1>{{ .Title }}</h1>
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <h2>{{ if eq .Site.Language.Lang "id" }}Posting Terbaru{{ else }}Recent Posts{{ end }}</h2>
+        {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+            <div class="post-item">
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <div class="post-summary">{{ .Summary }}</div>
+                <div class="post-meta">{{ .Date.Format "January 2, 2006" }}</div>
+            </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }} 

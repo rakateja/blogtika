@@ -1,0 +1,47 @@
+{{/* Custom Header Partial - Reusable across all pages */}}
+<header class="custom-header">
+    <div class="header-container">
+        <div class="header-left">
+            <a href="{{ .Site.LanguagePrefix | relURL }}" class="site-logo">
+                <img src="https://www.tikadata.com/tikalogo.png" alt="{{ .Site.Title }} Logo" class="logo-img">
+            </a>
+            
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle">Products <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="#features" class="dropdown-item">AR & AP Automation</a>
+                                <a href="#features" class="dropdown-item">Expense, Reimbursement & Cash Advance</a>
+                                <a href="#features" class="dropdown-item">Procure-To-Pay</a>
+                                <a href="#features" class="dropdown-item">Accounting/ERP Integrations</a>
+                            </div>
+                        </div>
+                    </li>
+                    {{ if .Site.Menus.main }}
+                        {{ range .Site.Menus.main }}
+                            <li>
+                                <a href="{{ .URL }}" title="{{ .Name }}">
+                                    {{ .Name }}
+                                </a>
+                            </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <div class="language-switcher">
+                {{ range .Site.Languages }}
+                    {{ if eq .Lang $.Site.Language.Lang }}
+                        <strong>{{ .LanguageName }}</strong>
+                    {{ else }}
+                        <a href="{{ .Lang | relURL }}">{{ .LanguageName }}</a>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</header>

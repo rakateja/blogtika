@@ -1,0 +1,4 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Tika Blog - Expenses Management, Procure-to-pay and Payable solution'
+theme = 'ananke'
