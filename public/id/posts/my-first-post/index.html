@@ -18,10 +18,98 @@
             color: #333;
         }
         
-        .single-content {
-            max-width: 800px;
+         
+        .article-layout {
+            display: flex;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 1rem;
+            padding: 2rem 1rem;
+            gap: 3rem;
+        }
+        
+         
+        .toc-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .toc-container {
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+        
+        .toc-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6b7280;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+        }
+        
+        .toc-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .toc-nav li {
+            margin-bottom: 0;
+        }
+        
+        .toc-nav a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            border-left: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .toc-nav a:hover {
+            color: var(--primary-color, #FF6B00);
+            background-color: #fef3ec;
+            border-left-color: #ffcca8;
+        }
+        
+        .toc-nav a.active {
+            color: var(--primary-color, #FF6B00);
+            border-left-color: var(--primary-color, #FF6B00);
+            background-color: #fef3ec;
+            font-weight: 500;
+        }
+        
+         
+        .toc-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .toc-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 2px;
+        }
+        
+        .toc-container::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 2px;
+        }
+        
+        .toc-container::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+        
+         
+        .single-content {
+            flex: 1;
+            min-width: 0;
+            max-width: 800px;
         }
         
         .article-title {
@@ -50,10 +138,13 @@
             color: #2c3e50;
             margin-top: 2rem;
             margin-bottom: 1rem;
+            scroll-margin-top: 100px;
         }
         
         .article-content h2 {
             color: #34495e;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e9ecef;
         }
         
         .back-link {
@@ -74,14 +165,143 @@
         }
         
          
-        @media (max-width: 768px) {
-            .single-content {
+        .toc-mobile-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color, #FF6B00);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            font-size: 1.2rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        
+        .toc-mobile-toggle:hover {
+            background: var(--primary-hover, #FF8533);
+            transform: scale(1.05);
+        }
+        
+         
+        .toc-mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .toc-mobile-overlay.active {
+            opacity: 1;
+        }
+        
+         
+        .toc-mobile-panel {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            z-index: 999;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .toc-mobile-panel.active {
+            transform: translateY(0);
+        }
+        
+        .toc-mobile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            background: white;
+        }
+        
+        .toc-mobile-header h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #2c3e50;
+        }
+        
+        .toc-mobile-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+            padding: 0.25rem;
+        }
+        
+        .toc-mobile-content {
+            padding: 1rem 1.5rem 2rem;
+        }
+        
+        .toc-mobile-content .toc-nav a {
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+        
+         
+        @media (max-width: 1100px) {
+            .toc-sidebar {
+                width: 240px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .article-layout {
+                flex-direction: column;
                 padding: 1rem;
+            }
+            
+            .toc-sidebar {
+                display: none;
+            }
+            
+            .toc-mobile-toggle,
+            .toc-mobile-overlay,
+            .toc-mobile-panel {
+                display: block;
+            }
+            
+            .single-content {
+                max-width: 100%;
             }
             
             .article-title {
                 font-size: 2rem;
             }
+        }
+        
+         
+        .no-toc .article-layout {
+            justify-content: center;
+        }
+        
+        .no-toc .toc-sidebar,
+        .no-toc .toc-mobile-toggle {
+            display: none;
         }
     </style>
 </head>
@@ -141,16 +361,39 @@
 </header>
 
     
-    <main class="single-content">
-        <article>
-            <h1 class="article-title">My First Post</h1>
-            <div class="article-meta">
-                Published on January 15, 2024
-                
-            </div>
+    
+    
+    
+    
+    <main class="">
+        <div class="article-layout">
             
-            <div class="article-content">
-                <p>Ini adalah contoh posting blog untuk menunjukkan bahwa situs Hugo kami berfungsi dengan benar.</p>
+            
+            <aside class="toc-sidebar">
+                <div class="toc-container">
+                    <div class="toc-title">
+                        <i class="fas fa-list-ul"></i> On This Page
+                    </div>
+                    <nav>
+                        <ul class="toc-nav" id="toc-nav">
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            
+            
+            
+            <div class="single-content">
+                <article>
+                    <h1 class="article-title">My First Post</h1>
+                    <div class="article-meta">
+                        Published on January 15, 2024
+                        
+                    </div>
+                    
+                    <div class="article-content" id="article-content">
+                        <p>Ini adalah contoh posting blog untuk menunjukkan bahwa situs Hugo kami berfungsi dengan benar.</p>
 <h2 id="yang-kami-perbaiki">Yang Kami Perbaiki</h2>
 <ul>
 <li>✅ Mengatasi kesalahan file layout</li>
@@ -167,12 +410,179 @@
 </ul>
 <p>Situs sekarang siap untuk konten Anda!</p>
 
+                    </div>
+                </article>
+                
+                <div class="back-link">
+                    <a href="http://localhost:1313/">← Back to Home</a>
+                </div>
             </div>
-        </article>
-        
-        <div class="back-link">
-            <a href="http://localhost:1313/">← Back to Home</a>
         </div>
+        
+        
+        
+        <button class="toc-mobile-toggle" id="toc-mobile-toggle" aria-label="Open table of contents">
+            <i class="fas fa-list-ul"></i>
+        </button>
+        
+        <div class="toc-mobile-overlay" id="toc-mobile-overlay"></div>
+        
+        <div class="toc-mobile-panel" id="toc-mobile-panel">
+            <div class="toc-mobile-header">
+                <h3><i class="fas fa-list-ul"></i> On This Page</h3>
+                <button class="toc-mobile-close" id="toc-mobile-close" aria-label="Close table of contents">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="toc-mobile-content">
+                <ul class="toc-nav" id="toc-nav-mobile">
+                </ul>
+            </div>
+        </div>
+        
     </main>
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const articleContent = document.getElementById('article-content');
+            const headings = articleContent.querySelectorAll('h2');
+            const tocNav = document.getElementById('toc-nav');
+            const tocNavMobile = document.getElementById('toc-nav-mobile');
+            
+            
+            headings.forEach(function(heading, index) {
+                
+                if (!heading.id) {
+                    heading.id = 'heading-' + index;
+                }
+                
+                
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + heading.id;
+                a.textContent = heading.textContent;
+                a.setAttribute('data-target', heading.id);
+                li.appendChild(a);
+                
+                
+                if (tocNav) {
+                    tocNav.appendChild(li.cloneNode(true));
+                }
+                
+                
+                if (tocNavMobile) {
+                    const mobileLi = li.cloneNode(true);
+                    mobileLi.querySelector('a').addEventListener('click', function() {
+                        closeMobileToc();
+                    });
+                    tocNavMobile.appendChild(mobileLi);
+                }
+            });
+            
+            
+            document.querySelectorAll('.toc-nav a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        history.pushState(null, null, '#' + targetId);
+                    }
+                });
+            });
+            
+            
+            function updateActiveLink() {
+                const scrollPosition = window.scrollY + 120;
+                
+                let activeHeading = null;
+                headings.forEach(function(heading) {
+                    if (heading.offsetTop <= scrollPosition) {
+                        activeHeading = heading;
+                    }
+                });
+                
+                
+                document.querySelectorAll('.toc-nav a').forEach(function(link) {
+                    link.classList.remove('active');
+                });
+                
+                
+                if (activeHeading) {
+                    document.querySelectorAll('.toc-nav a[href="#' + activeHeading.id + '"]').forEach(function(link) {
+                        link.classList.add('active');
+                    });
+                }
+            }
+            
+            
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        updateActiveLink();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+            
+            
+            updateActiveLink();
+            
+            
+            const mobileToggle = document.getElementById('toc-mobile-toggle');
+            const mobileOverlay = document.getElementById('toc-mobile-overlay');
+            const mobilePanel = document.getElementById('toc-mobile-panel');
+            const mobileClose = document.getElementById('toc-mobile-close');
+            
+            function openMobileToc() {
+                mobileOverlay.style.display = 'block';
+                mobilePanel.style.display = 'block';
+                
+                mobileOverlay.offsetHeight;
+                mobileOverlay.classList.add('active');
+                mobilePanel.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeMobileToc() {
+                mobileOverlay.classList.remove('active');
+                mobilePanel.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(function() {
+                    mobileOverlay.style.display = 'none';
+                    mobilePanel.style.display = 'none';
+                }, 300);
+            }
+            
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', openMobileToc);
+            }
+            
+            if (mobileOverlay) {
+                mobileOverlay.addEventListener('click', closeMobileToc);
+            }
+            
+            if (mobileClose) {
+                mobileClose.addEventListener('click', closeMobileToc);
+            }
+            
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobilePanel && mobilePanel.classList.contains('active')) {
+                    closeMobileToc();
+                }
+            });
+        });
+    </script>
+    
 </body>
-</html> 
+</html>
